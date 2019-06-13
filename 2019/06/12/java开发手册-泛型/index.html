@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="基本数据类型包装类12345678byte byteshort shortint Integerlong longfloat floatdouble doubleboolean booleanchar Character  基本数据类型和包装类的区别121.包装类提供了方法2.包装类初始值为null  接口和抽象类的区别12341.抽象类继承Object,接口不继承2.抽象类有构造方法，接口没有3">
+<meta name="description" content="泛型我们先来看一道程序12345678910111213public class Stove &amp;#123;    public static Object heat(Object food) &amp;#123;        System.out.println(food + &amp;quot;is done&amp;quot;);        return food;    &amp;#125;    public st">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基本数据类型包装类">
-<meta property="og:url" content="http://yoursite.com/2019/06/10/java-2019-06-10/index.html">
+<meta property="og:title" content="泛型">
+<meta property="og:url" content="http://yoursite.com/2019/06/12/java开发手册-泛型/index.html">
 <meta property="og:site_name" content="谢黎的个人博客">
-<meta property="og:description" content="基本数据类型包装类12345678byte byteshort shortint Integerlong longfloat floatdouble doubleboolean booleanchar Character  基本数据类型和包装类的区别121.包装类提供了方法2.包装类初始值为null  接口和抽象类的区别12341.抽象类继承Object,接口不继承2.抽象类有构造方法，接口没有3">
+<meta property="og:description" content="泛型我们先来看一道程序12345678910111213public class Stove &amp;#123;    public static Object heat(Object food) &amp;#123;        System.out.println(food + &amp;quot;is done&amp;quot;);        return food;    &amp;#125;    public st">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-10T09:03:23.137Z">
+<meta property="og:updated_time" content="2019-06-12T12:03:22.333Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基本数据类型包装类">
-<meta name="twitter:description" content="基本数据类型包装类12345678byte byteshort shortint Integerlong longfloat floatdouble doubleboolean booleanchar Character  基本数据类型和包装类的区别121.包装类提供了方法2.包装类初始值为null  接口和抽象类的区别12341.抽象类继承Object,接口不继承2.抽象类有构造方法，接口没有3">
+<meta name="twitter:title" content="泛型">
+<meta name="twitter:description" content="泛型我们先来看一道程序12345678910111213public class Stove &amp;#123;    public static Object heat(Object food) &amp;#123;        System.out.println(food + &amp;quot;is done&amp;quot;);        return food;    &amp;#125;    public st">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/10/java-2019-06-10/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/12/java开发手册-泛型/">
 
 
 
 
 
-  <title>基本数据类型包装类 | 谢黎的个人博客</title>
+  <title>泛型 | 谢黎的个人博客</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/java-2019-06-10/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/java开发手册-泛型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Madara">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基本数据类型包装类</h1>
+          <h1 class="post-title" itemprop="name headline">泛型</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-10T10:16:28+08:00">
-                2019-06-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-12T19:38:45+08:00">
+                2019-06-12
               </time>
             
 
@@ -299,25 +299,31 @@
       
 
       
-        <h1 id="基本数据类型包装类"><a href="#基本数据类型包装类" class="headerlink" title="基本数据类型包装类"></a>基本数据类型包装类</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">byte byte</span><br><span class="line">short short</span><br><span class="line">int Integer</span><br><span class="line">long long</span><br><span class="line">float float</span><br><span class="line">double double</span><br><span class="line">boolean boolean</span><br><span class="line">char Character</span><br></pre></td></tr></table></figure>
+        <h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h4 id="我们先来看一道程序"><a href="#我们先来看一道程序" class="headerlink" title="我们先来看一道程序"></a>我们先来看一道程序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Stove &#123;</span><br><span class="line">    public static Object heat(Object food) &#123;</span><br><span class="line">        System.out.println(food + &quot;is done&quot;);</span><br><span class="line">        return food;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Meat meat = new Meat();</span><br><span class="line">        meat = (Meat) Stove.heat(meat);</span><br><span class="line">        Soup soup = new Soup();</span><br><span class="line">        soup = (Soup) Stove.heat(soup);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="基本数据类型和包装类的区别"><a href="#基本数据类型和包装类的区别" class="headerlink" title="基本数据类型和包装类的区别"></a>基本数据类型和包装类的区别</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.包装类提供了方法</span><br><span class="line">2.包装类初始值为null</span><br></pre></td></tr></table></figure>
-
-<h1 id="接口和抽象类的区别"><a href="#接口和抽象类的区别" class="headerlink" title="接口和抽象类的区别"></a>接口和抽象类的区别</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.抽象类继承Object,接口不继承</span><br><span class="line">2.抽象类有构造方法，接口没有</span><br><span class="line">3.抽象类可以有成员变量和常量，接口只有常量，必须用static final修饰</span><br><span class="line">4.抽象类可以有final修饰的方法</span><br></pre></td></tr></table></figure>
-
-<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对于程序运行出现的不正常情况，称为异常。</span><br><span class="line">描述不正常情况的类为异常类，不同的异常对应了不同的异常类，</span><br><span class="line">所有的异常类组成了异常体系</span><br></pre></td></tr></table></figure>
-
-<h1 id="异常体系结构"><a href="#异常体系结构" class="headerlink" title="异常体系结构"></a>异常体系结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Throwable</span><br><span class="line">  --Error:通常是指jvm的严重性问题，不可处理的，比如内存溢出</span><br><span class="line">  --Exception：可处理的，非严重性问题</span><br><span class="line">    --checkedException(检查性异常)</span><br><span class="line">      在编译时会检测异常（比如文件找不到，中断异常）</span><br><span class="line">    --uncheckedException（非检查性异常，运行时异常）</span><br><span class="line">      在运行时出现的异常（比如空指针异常）</span><br></pre></td></tr></table></figure>
-
-<h1 id="异常处理机制"><a href="#异常处理机制" class="headerlink" title="异常处理机制"></a>异常处理机制</h1><p>try–catch–finally</p>
 <blockquote>
-<p>可以写多个catch，先写子类再写父类。代码出现异常，从第一个catch开始匹配，依次往下，直到<br>某个catch匹配到。如果最终都没有匹配到，程序会中断。</p>
+<p>这道程序是模拟微波炉加热肉和加热汤，采用向上转型，让它可以加热任意对象，但是这对于客户端<br>来说是不友好的，因为客户端不知道你加热了什么，在进行类型转换的时候存在风险，而泛型则可以<br>完美的解决这个问题。</p>
+</blockquote>
+<blockquote>
+<p>泛型可以定义在类、接口、方法中，编译器通过识别尖括号和尖括号内的字母来解析泛型。</p>
+</blockquote>
+<h4 id="下面再通过一个程序来理解泛型"><a href="#下面再通过一个程序来理解泛型" class="headerlink" title="下面再通过一个程序来理解泛型"></a>下面再通过一个程序来理解泛型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class GenericDefinitionDemo &#123;</span><br><span class="line">    static &lt;String,T,Alibaba&gt; String get(String string,Alibaba alibaba)&#123;</span><br><span class="line">        return string;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Integer first = 222;</span><br><span class="line">        Long second = 333L;</span><br><span class="line"></span><br><span class="line">        Integer result = get(first,second);</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>编译通过，运行结果为222</p>
+</blockquote>
+<blockquote>
+<p>get()是一个泛型方法first不是java.lang.String而是泛型标识<string>,second指代<alibaba>.
+其他没有用到的泛型符号不会导致编译出错，类名后的T和尖括号里的T完全相同也是合法的，只不过<br>是两个指代而已。</alibaba></string></p>
+</blockquote>
+<blockquote>
 <ul>
-<li>运行时异常：都是RuntimeException类及其子类异常，如NullPointerException、IndexOutOfBoundsException(等，这些异常一般是由程序逻辑错误引起的，程序应该从逻辑角度尽可能避免这类异常的发生。</li>
-<li>非运行时异常（编译异常）：是RuntimeException以外的异常，类型上都属于Exception类及其子类。从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。如IOException、SQLException等以及用户自定义的Exception异常，一般情况下不自定义检查异常.</li>
+<li><em style="color:green">尖括号里的每个元素都指代一种未知的类型。</em></li>
+<li><em style="color:green">尖括号的位置非常讲究，必须在类名之后或方法返回值之前。</em></li>
+<li><em style="color:green">尖括号里的每个元素都指代一种未知的类型。</em></li>
+<li><em style="color:green">尖括号里的每个元素都指代一种未知的类型。</em></li>
 </ul>
 </blockquote>
-<p>void printStackTrace()    </p>
 
       
     </div>
@@ -342,8 +348,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/06/java-2019-06-05/" rel="next" title="java学习">
-                <i class="fa fa-chevron-left"></i> java学习
+              <a href="/2019/06/11/day0611/" rel="next" title="日志、集合">
+                <i class="fa fa-chevron-left"></i> 日志、集合
               </a>
             
           </div>
@@ -351,10 +357,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/11/day0611/" rel="prev" title="日志、集合">
-                日志、集合 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -468,7 +470,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本数据类型包装类"><span class="nav-number">1.</span> <span class="nav-text">基本数据类型包装类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本数据类型和包装类的区别"><span class="nav-number">2.</span> <span class="nav-text">基本数据类型和包装类的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口和抽象类的区别"><span class="nav-number">3.</span> <span class="nav-text">接口和抽象类的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常"><span class="nav-number">4.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常体系结构"><span class="nav-number">5.</span> <span class="nav-text">异常体系结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常处理机制"><span class="nav-number">6.</span> <span class="nav-text">异常处理机制</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#泛型"><span class="nav-number">1.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#我们先来看一道程序"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">我们先来看一道程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下面再通过一个程序来理解泛型"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">下面再通过一个程序来理解泛型</span></a></li></ol></li></ol></div>
             
 
           </div>

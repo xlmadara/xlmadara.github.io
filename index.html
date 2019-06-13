@@ -229,6 +229,272 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/java开发手册-泛型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Madara">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谢黎的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/12/java开发手册-泛型/" itemprop="url">泛型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-12T19:38:45+08:00">
+                2019-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h4 id="我们先来看一道程序"><a href="#我们先来看一道程序" class="headerlink" title="我们先来看一道程序"></a>我们先来看一道程序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Stove &#123;</span><br><span class="line">    public static Object heat(Object food) &#123;</span><br><span class="line">        System.out.println(food + &quot;is done&quot;);</span><br><span class="line">        return food;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Meat meat = new Meat();</span><br><span class="line">        meat = (Meat) Stove.heat(meat);</span><br><span class="line">        Soup soup = new Soup();</span><br><span class="line">        soup = (Soup) Stove.heat(soup);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这道程序是模拟微波炉加热肉和加热汤，采用向上转型，让它可以加热任意对象，但是这对于客户端<br>来说是不友好的，因为客户端不知道你加热了什么，在进行类型转换的时候存在风险，而泛型则可以<br>完美的解决这个问题。</p>
+</blockquote>
+<blockquote>
+<p>泛型可以定义在类、接口、方法中，编译器通过识别尖括号和尖括号内的字母来解析泛型。</p>
+</blockquote>
+<h4 id="下面再通过一个程序来理解泛型"><a href="#下面再通过一个程序来理解泛型" class="headerlink" title="下面再通过一个程序来理解泛型"></a>下面再通过一个程序来理解泛型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class GenericDefinitionDemo &#123;</span><br><span class="line">    static &lt;String,T,Alibaba&gt; String get(String string,Alibaba alibaba)&#123;</span><br><span class="line">        return string;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Integer first = 222;</span><br><span class="line">        Long second = 333L;</span><br><span class="line"></span><br><span class="line">        Integer result = get(first,second);</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>编译通过，运行结果为222</p>
+</blockquote>
+<blockquote>
+<p>get()是一个泛型方法first不是java.lang.String而是泛型标识<string>,second指代<alibaba>.
+其他没有用到的泛型符号不会导致编译出错，类名后的T和尖括号里的T完全相同也是合法的，只不过<br>是两个指代而已。</alibaba></string></p>
+</blockquote>
+<blockquote>
+<ul>
+<li><em style="color:green">尖括号里的每个元素都指代一种未知的类型。</em></li>
+<li><em style="color:green">尖括号的位置非常讲究，必须在类名之后或方法返回值之前。</em></li>
+<li><em style="color:green">尖括号里的每个元素都指代一种未知的类型。</em></li>
+<li><em style="color:green">尖括号里的每个元素都指代一种未知的类型。</em></li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/11/day0611/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Madara">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谢黎的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/11/day0611/" itemprop="url">日志、集合</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-11T09:46:10+08:00">
+                2019-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><p>4个级别<br>error warn info debug</p>
+<h2 id="修改日志配置路径"><a href="#修改日志配置路径" class="headerlink" title="修改日志配置路径"></a>修改日志配置路径</h2><p>PropertyConfigurator.configure(“config/log4j.properties”);</p>
+<h1 id="collection"><a href="#collection" class="headerlink" title="collection"></a>collection</h1><p>collection<br>  -List 有序重复<br>    -ArrayList jdk1.2数据结构，不同步（要同步可加锁）查询快<br>    -LinkList 链表结构，不同步，增删快<br>    -Vector jdk1.0数据结构，同步（查询慢，增删慢），被ArrayList替代<br>  -Set 无序，不可重复<br>    -HashSet 哈希表结构<br>        如何保证唯一性的？<br>        先调用两个对象的hashCode()方法，判断hashCode是否一样，如果不一样，两个对象都可以存入HashSet，如果一样，再调用equals方法比较，如果equals比较的结果是true,不存入。为false，则存入。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/java-2019-06-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -304,6 +570,21 @@
 
 <h1 id="基本数据类型和包装类的区别"><a href="#基本数据类型和包装类的区别" class="headerlink" title="基本数据类型和包装类的区别"></a>基本数据类型和包装类的区别</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.包装类提供了方法</span><br><span class="line">2.包装类初始值为null</span><br></pre></td></tr></table></figure>
 
+<h1 id="接口和抽象类的区别"><a href="#接口和抽象类的区别" class="headerlink" title="接口和抽象类的区别"></a>接口和抽象类的区别</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.抽象类继承Object,接口不继承</span><br><span class="line">2.抽象类有构造方法，接口没有</span><br><span class="line">3.抽象类可以有成员变量和常量，接口只有常量，必须用static final修饰</span><br><span class="line">4.抽象类可以有final修饰的方法</span><br></pre></td></tr></table></figure>
+
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对于程序运行出现的不正常情况，称为异常。</span><br><span class="line">描述不正常情况的类为异常类，不同的异常对应了不同的异常类，</span><br><span class="line">所有的异常类组成了异常体系</span><br></pre></td></tr></table></figure>
+
+<h1 id="异常体系结构"><a href="#异常体系结构" class="headerlink" title="异常体系结构"></a>异常体系结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Throwable</span><br><span class="line">  --Error:通常是指jvm的严重性问题，不可处理的，比如内存溢出</span><br><span class="line">  --Exception：可处理的，非严重性问题</span><br><span class="line">    --checkedException(检查性异常)</span><br><span class="line">      在编译时会检测异常（比如文件找不到，中断异常）</span><br><span class="line">    --uncheckedException（非检查性异常，运行时异常）</span><br><span class="line">      在运行时出现的异常（比如空指针异常）</span><br></pre></td></tr></table></figure>
+
+<h1 id="异常处理机制"><a href="#异常处理机制" class="headerlink" title="异常处理机制"></a>异常处理机制</h1><p>try–catch–finally</p>
+<blockquote>
+<p>可以写多个catch，先写子类再写父类。代码出现异常，从第一个catch开始匹配，依次往下，直到<br>某个catch匹配到。如果最终都没有匹配到，程序会中断。</p>
+<ul>
+<li>运行时异常：都是RuntimeException类及其子类异常，如NullPointerException、IndexOutOfBoundsException(等，这些异常一般是由程序逻辑错误引起的，程序应该从逻辑角度尽可能避免这类异常的发生。</li>
+<li>非运行时异常（编译异常）：是RuntimeException以外的异常，类型上都属于Exception类及其子类。从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。如IOException、SQLException等以及用户自定义的Exception异常，一般情况下不自定义检查异常.</li>
+</ul>
+</blockquote>
+<p>void printStackTrace()    </p>
 
           
         
@@ -1034,7 +1315,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
