@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="实例方法  不用static修饰，通过对象名.方法名()调用 类方法  用static修饰(也叫静态方法)，可以直接通过类名.方法名()调用，也可以通过对象名.方法名()调用   static:静态的，在加载类时会加载  修饰成员（成员变量，成员方法)  修饰方法，该方法是静态方法（类方法），可以直接通过类名来调用  不能使用非静态变量   修饰变量，该变量是静态的，所有对象共享（该变量只有一份）">
+<meta name="description" content="1234567java 中的instanceof 运算符是用来在运行时指出对象是否是特定类的一个实例。instanceof通过返回一个布尔值来指出，这个对象是否是这个特定类或者是它的子类的一个实例。在编译状态中，class可以是object对象的父类，自身类，子类。在这三种情况下Java编译时不会报错。在运行转态中，class可以是object对象的父类，自身类，不能是子类。在前两种情况下resu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="0603-java-学习">
-<meta property="og:url" content="http://yoursite.com/2019/06/03/实例方法、类方法/index.html">
+<meta property="og:title" content="java中instanceof关键字的理解">
+<meta property="og:url" content="http://yoursite.com/2019/06/15/0615/index.html">
 <meta property="og:site_name" content="谢黎的个人博客">
-<meta property="og:description" content="实例方法  不用static修饰，通过对象名.方法名()调用 类方法  用static修饰(也叫静态方法)，可以直接通过类名.方法名()调用，也可以通过对象名.方法名()调用   static:静态的，在加载类时会加载  修饰成员（成员变量，成员方法)  修饰方法，该方法是静态方法（类方法），可以直接通过类名来调用  不能使用非静态变量   修饰变量，该变量是静态的，所有对象共享（该变量只有一份）">
+<meta property="og:description" content="1234567java 中的instanceof 运算符是用来在运行时指出对象是否是特定类的一个实例。instanceof通过返回一个布尔值来指出，这个对象是否是这个特定类或者是它的子类的一个实例。在编译状态中，class可以是object对象的父类，自身类，子类。在这三种情况下Java编译时不会报错。在运行转态中，class可以是object对象的父类，自身类，不能是子类。在前两种情况下resu">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-10T04:11:44.447Z">
+<meta property="og:updated_time" content="2019-06-15T02:37:18.025Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0603-java-学习">
-<meta name="twitter:description" content="实例方法  不用static修饰，通过对象名.方法名()调用 类方法  用static修饰(也叫静态方法)，可以直接通过类名.方法名()调用，也可以通过对象名.方法名()调用   static:静态的，在加载类时会加载  修饰成员（成员变量，成员方法)  修饰方法，该方法是静态方法（类方法），可以直接通过类名来调用  不能使用非静态变量   修饰变量，该变量是静态的，所有对象共享（该变量只有一份）">
+<meta name="twitter:title" content="java中instanceof关键字的理解">
+<meta name="twitter:description" content="1234567java 中的instanceof 运算符是用来在运行时指出对象是否是特定类的一个实例。instanceof通过返回一个布尔值来指出，这个对象是否是这个特定类或者是它的子类的一个实例。在编译状态中，class可以是object对象的父类，自身类，子类。在这三种情况下Java编译时不会报错。在运行转态中，class可以是object对象的父类，自身类，不能是子类。在前两种情况下resu">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/03/实例方法、类方法/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/15/0615/">
 
 
 
 
 
-  <title>0603-java-学习 | 谢黎的个人博客</title>
+  <title>java中instanceof关键字的理解 | 谢黎的个人博客</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/实例方法、类方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/15/0615/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Madara">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">0603-java-学习</h1>
+          <h1 class="post-title" itemprop="name headline">java中instanceof关键字的理解</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-03T09:12:49+08:00">
-                2019-06-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-15T10:31:20+08:00">
+                2019-06-15
               </time>
             
 
@@ -299,19 +299,8 @@
       
 
       
-        <h4 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h4><p>  不用static修饰，通过对象名.方法名()调用</p>
-<h4 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h4><p>  用static修饰(也叫静态方法)，可以直接通过类名.方法名()调用，也可以通过对象名.方法名()调用</p>
-<p>  static:静态的，在加载类时会加载<br>  修饰成员（成员变量，成员方法)<br>  修饰方法，该方法是静态方法（类方法），可以直接通过类名来调用<br>  不能使用非静态变量</p>
-<p>  修饰变量，该变量是静态的，所有对象共享（该变量只有一份）</p>
-<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><blockquote>
-<p>在构造方法中调用本类的其他构造方法，必须放在第一句</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public Dog&#123;</span><br><span class="line"></span><br><span class="line">  public Dog(int age,int heath) &#123;</span><br><span class="line">      this(age);//通过this(...)调用本类的其他构造方法，必须放在第一句</span><br><span class="line">      this.heath = heath;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public Dog(int age)&#123;</span><br><span class="line">    this.age = age;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">java 中的instanceof 运算符是用来在运行时指出对象是否是特定类的一个实例。instanceof通</span><br><span class="line">过返回一个布尔值来指出，这个对象是否是这个特定类或者是它的子类的一个实例。</span><br><span class="line"></span><br><span class="line">在编译状态中，class可以是object对象的父类，自身类，子类。在这三种情况下Java编译时不会报错。</span><br><span class="line"></span><br><span class="line">在运行转态中，class可以是object对象的父类，自身类，不能是子类。在前两种情况下result的结</span><br><span class="line">果为true，最后一种为false。但是class为子类时编译不会报错。运行结果为false。</span><br></pre></td></tr></table></figure>
 
-<h4 id="this的用法"><a href="#this的用法" class="headerlink" title="this的用法"></a>this的用法</h4><p>  1)this.属性，访问当前对象属性，一般用在成员变量和局部变量重名的情况。（当不存在重名时<br>  ，this可以省略）<br>  2)this.方法(),调用本类的其他方法。this可以省略<br>  3)this(…)在调用其他构造方法，必须放在第一句</p>
-<h4 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h4><p>在众多事务中，找出共同特性（属性，行为）的过程，找出共同特征也是找与问题相关的特征，不<br>相关的不列出。</p>
-<p>static可以用来修饰属性、方法和代码块<br>static修饰的属性和方法称为类属性(类变量)、类方法<br>不使用static修饰的属性和方法，属于单个对象，通常称为实例属性（实例变量）、实例方法<br>static修饰的变量和方法可以通过类名和对象名访问，而不用static修饰的变量和方法只能通过<br>对象名访问。<br>final可以用来修饰属性、方法和类<br>用final修饰的变量称为常量，其值固定不变</p>
-<p>注意：执行顺序：静态代码块》普通代码块》构造</p>
 
       
     </div>
@@ -336,8 +325,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/31/java-2019-05-31/" rel="next" title="java学习笔记">
-                <i class="fa fa-chevron-left"></i> java学习笔记
+              <a href="/2019/06/13/IO/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -345,10 +334,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/04/java-2019-06-04/" rel="prev" title="java学习">
-                java学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -400,17 +385,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -452,22 +428,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例方法"><span class="nav-number">1.</span> <span class="nav-text">实例方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类方法"><span class="nav-number">2.</span> <span class="nav-text">类方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造方法"><span class="nav-number">3.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this的用法"><span class="nav-number">4.</span> <span class="nav-text">this的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象"><span class="nav-number">5.</span> <span class="nav-text">抽象</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
